@@ -1,38 +1,61 @@
 .App {
+  font-family: "Josefin Slab", serif;
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+html {
+  height: 100%;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+  height: 100%;
+  margin: 0;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+h1,
+h2,
+p,
+form,
+img {
+  margin: 0 auto;
+  display: block;
+  font-family: "Josefin Slab", serif;
+  text-align: center;
+  color: #263238;
 }
-
-.App-link {
-  color: #61dafb;
+h1 {
+  font-size: 2.5rem;
+  padding-top: 30px;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+p {
+  font-size: 20px;
+}
+.padding50 {
+  padding: 50px;
+}
+.padding80 {
+  padding: 80px;
+}
+.paddingBottom20 {
+  padding-bottom: 20px;
+}
+.paddingBottom30 {
+  padding-bottom: 30px;
+}
+.paddingBottom50 {
+  padding-bottom: 50px;
+}
+.boxGradient {
+  max-width: 100%;
+  background-image: linear-gradient(to top, #5ee7df 0%, #b490ca 100%);
+  border-radius: 20px;
+  margin: 0 auto;
+  display: block;
+}
+.smallerIcon {
+  margin: 0 auto;
+  display: block;
+  /* font-size: 40px;
+  line-height: 50px; */
+  text-align: center;
+  /* padding-bottom: 10px; */
 }

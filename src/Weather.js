@@ -1,14 +1,45 @@
 import React from "react";
 import axios from 'axios';
+import ReactAnimatedWeather from 'react-animated-weather';
+
+import "./weather.css";
 
 
 export default function Weather() {
-    // function handleResponse(response) {
-    //     alert(`The weather in NY is ${response.data.main.temp} degrees`);
-    // }
-
-    // let apiUrl = `http://api.openweathermap.org/data/2.5/weather?q=New York&appid=3e712c360eb3016685312bd97cac9b63&units=metric`;
-
-    // axios.get(apiUrl).then(handleResponse);
-    return <h2>Hello from Weather</h2>;
+  return (
+    <div className="row justify-content-center padding80">
+      <div className="col-sm">
+        <h2>
+          <div className="changeTemp">
+            18
+            <span className="units">
+              <a href="/" className="active">
+                °C
+              </a>{" "}
+              |<a href="/">°F</a>
+            </span>
+          </div>
+        </h2>
+        <p className="paddingBottom20">Min 15°C / Max 20°C</p>
+      </div>
+      <div className="col-sm">
+        <ReactAnimatedWeather
+        icon="CLEAR_DAY"
+        color="yellow"
+        size={100}
+        animate={true}
+      />
+        {/* <img src="" alt=" " className="weatherIcon" /> */}
+      </div>
+      <div className="col-sm">
+        <p>
+          Feels like 20°C
+          <br />
+          💧 Humidity: 60%
+          <br />
+          🌬 Wind: 3 km/h
+        </p>
+      </div>
+    </div>
+  );
 }

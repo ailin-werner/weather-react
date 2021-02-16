@@ -1,0 +1,10 @@
+.button {
+  margin: 20px auto;
+  display: block;
+  font-family: "Josefin Slab", serif;
+  background-color: #00bcd4;
+  color: #ffffff;
+  border: 1px solid #5ee7df;
+  border-radius: 30px;
+  padding: 10px 20px;
+}
