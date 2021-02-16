@@ -1,5 +1,3 @@
-import logo from './logo.svg';
-import './App.css';
 import Searchbar from "./Searchbar";
 import Button from "./Button";
 import Salutation from "./Salutation";
@@ -8,8 +6,9 @@ import Weather from "./Weather";
 import Forecast from "./Forecast";
 import Opensource from "./Opensource";
 
+import './App.css';
 
-function App() {
+export default function App() {
   return (
     <div className="App">
       <div class="container padding50">
@@ -24,5 +23,3 @@ function App() {
     </div>
   );
 }
-
-export default App;
