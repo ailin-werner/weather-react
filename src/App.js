@@ -6,11 +6,13 @@ import Weather from "./Weather";
 import Forecast from "./Forecast";
 import Opensource from "./Opensource";
 
+import 'bootstrap/dist/css/bootstrap.css';
 import './App.css';
 
 export default function App() {
   return (
     <div className="App">
+    <div className="container">
       <div class="container padding50">
         <Searchbar />
         <Button />
@@ -20,6 +22,7 @@ export default function App() {
         <Forecast />
         <Opensource />
       </div>
+    </div>
     </div>
   );
 }
