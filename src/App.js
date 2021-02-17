@@ -1,7 +1,6 @@
 import Searchbar from "./Searchbar";
 import Button from "./Button";
 import Salutation from "./Salutation";
-import Date from "./Date";
 import Weather from "./Weather";
 import Forecast from "./Forecast";
 import Opensource from "./Opensource";
@@ -17,8 +16,7 @@ export default function App() {
         <Searchbar />
         <Button />
         <Salutation />
-        <Date />
-        <Weather />
+        <Weather defaultCity="Sydney" />
         <Forecast />
         <Opensource />
       </div>
