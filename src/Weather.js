@@ -9,7 +9,7 @@ import "./weather.css";
 
 
 export default function Weather(props) {
-  const [weatherData, setWeatherData] = useState({});
+  const [weatherData, setWeatherData] = useState({ready: false});
   const [city, setCity] = useState(props.defaultCity);
 
   function currentTemperature(response) {

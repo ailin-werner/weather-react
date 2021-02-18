@@ -12,8 +12,6 @@ export default function App() {
     <div className="App">
     <div className="container">
       <div class="container padding50">
-        {/* <Searchbar /> */}
-        {/* <Salutation /> */}
         <Weather defaultCity="Sydney" />
         <Forecast />
         <Opensource />
