@@ -18,6 +18,7 @@ export default function Weather(props) {
       // time: "Tuesday 12:02",
       date: new Date(response.data.dt * 1000),
       temperature: response.data.main.temp,
+      icon: response.data.weather[0].icon,
       feelsLike: response.data.main.feels_like,
       minTemp: response.data.main.temp_min,
       maxTemp: response.data.main.temp_max,

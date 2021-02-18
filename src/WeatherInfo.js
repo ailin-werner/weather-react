@@ -1,5 +1,5 @@
 import React from "react";
-import ReactAnimatedWeather from 'react-animated-weather';
+import WeatherIcon from "./WeatherIcon";
 
 export default function WeatherInfo(props) {
     return (
@@ -21,12 +21,13 @@ export default function WeatherInfo(props) {
                 <p className="paddingBottom20 text-capitalize">{props.data.description}</p>
             </div>
             <div className="col-sm">
-                <ReactAnimatedWeather
+                <WeatherIcon code={props.data.icon} />
+                {/* <ReactAnimatedWeather
                 icon="CLEAR_DAY"
                 color="yellow"
                 size={100}
                 animate={true}
-            />
+            /> */}
                 {/* <img src="" alt=" " className="weatherIcon" /> */}
             </div>
             <div className="col-sm">
