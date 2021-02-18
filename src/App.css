@@ -59,3 +59,32 @@ p {
   text-align: center;
   /* padding-bottom: 10px; */
 }
+.searchbar {
+  border-radius: 30px;
+  padding: 7px 20px;
+  border: 1px solid #5ee7df;
+  text-align: center;
+}
+.units {
+  font-size: 18px;
+  vertical-align: middle;
+}
+.active {
+  color: #263238;
+  cursor: default;
+}
+
+.active:hover {
+  color: #263238;
+  text-decoration: none;
+}
+.paddingBottom20 {
+  padding-bottom: 20px;
+}
+
+.weatherIcon {
+  margin: 0 auto;
+  display: block;
+  text-align: center;
+  padding-bottom: 30px;
+}
