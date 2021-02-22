@@ -64,7 +64,7 @@ export default function Weather(props) {
                 type="search"
                 className="searchbar"
                 placeholder="Where to next?"
-                autocomplete="off"
+                autoComplete="off"
                 onChange={handleCityChange}
               />
             </div>
