@@ -43,7 +43,7 @@ export default function WeatherTemperature(props){
                         </span>
                     </div>
                 </h2>
-                <p>Min {Math.round(minTempFahrenheit)}°C / Max {Math.round(maxTempFahrenheit)}°C</p>
+                <p>Min {Math.round(minTempFahrenheit)}°F / Max {Math.round(maxTempFahrenheit)}°F</p>
                 <p className="paddingBottom20 text-capitalize">Feels like {Math.round(feelLikeFahrenheit)}°C</p>
             </div>);
     }

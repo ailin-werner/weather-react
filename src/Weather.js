@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import axios from 'axios';
-import Button from "./Button";
 import Salutation from "./Salutation";
 import FormattedDate from "./FormattedDate";
 import WeatherInfo from "./WeatherInfo";
+import WeatherForecast from "./WeatherForecast";
 
 import "./weather.css";
 
@@ -15,7 +15,6 @@ export default function Weather(props) {
   function currentTemperature(response) {
     setWeatherData({
       ready: true,
-      // time: "Tuesday 12:02",
       date: new Date(response.data.dt * 1000),
       temperature: response.data.main.temp,
       icon: response.data.weather[0].icon,
@@ -38,6 +37,20 @@ export default function Weather(props) {
     event.preventDefault();
     search();
   }
+
+  function searchLocation(event) {
+    event.preventDefault();
+    function retrieveCoords(position) {
+      console.log(position);
+      let latitude = position.coords.latitude;
+      let longitude = position.coords.longitude;
+      let apiKey = `3e712c360eb3016685312bd97cac9b63`;
+      let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
+      axios.get(apiUrl).then(currentTemperature);
+    }
+    navigator.geolocation.getCurrentPosition(retrieveCoords);
+  }
+
   function handleCityChange(event) {
     setCity(event.target.value);
   }
@@ -57,10 +70,11 @@ export default function Weather(props) {
             </div>
           </div>
         </form>
-        <Button />
+        <button className="button" onClick={searchLocation}>Current location</button>
         <Salutation data={weatherData} />
         <FormattedDate date={weatherData.date} />
         <WeatherInfo data={weatherData} />
+        <WeatherForecast city={weatherData.city} />
     </div>
   );
 
