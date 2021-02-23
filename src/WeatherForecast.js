@@ -16,7 +16,7 @@ export default function WeatherForecast(props) {
         return (
             <div className="WeatherForecast row">
                     {forecast.list.slice(0, 5).map(function(ForecastItems, index) {
-                        return <div key={index} className="col-sm paddingBottom50"><WeatherForecastPreview data={ForecastItems} />
+                        return <div key={index} className="col-sm paddingBottom50"><WeatherForecastPreview data={ForecastItems} unit={props.unit} />
                         </div>
                     })}
                     {/* <WeatherForecastPreview data={forecast.list[0]} />
@@ -32,7 +32,7 @@ export default function WeatherForecast(props) {
         let url = `https://api.openweathermap.org/data/2.5/forecast?q=${props.city}&appid=${apiKey}&units=metric`;
         axios.get(url).then(handleForecastResponse);
         
-        return null;
+        return "Loading...";
     }
     
 }

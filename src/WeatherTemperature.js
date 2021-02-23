@@ -1,22 +1,22 @@
 import React, { useState } from "react";
 
 export default function WeatherTemperature(props){
-    const [unit, setUnit] = useState('celsius');
+    //const [unit, setUnit] = useState('celsius');
 
     function showFahrenheit(event) {
         event.preventDefault();
-        setUnit("fahrenheit");
+        props.setUnit("fahrenheit");
     }
     function showCelsius(event) {
         event.preventDefault();
-        setUnit("celsius");
+        props.setUnit("celsius");
     }
 
-    if (unit === 'celsius') {
+    if (props.unit === "celsius") {
     return (<div>
                 <h2>
                     <div className="changeTemp">
-                        {Math.round(props.celsius)}
+                        {Math.round(props.celsius.temperature)}
                         <span className="units">
                         °C {" "}
                         |<a href="/" onClick={showFahrenheit}>°F</a>
@@ -27,11 +27,12 @@ export default function WeatherTemperature(props){
                 <p className="paddingBottom20 text-capitalize">Feels like {Math.round(props.celsiusFeelsLike)}°C</p>
             </div>);
     } else {
-        let fahrenheit = (props.celsius * 9/5) + 32;
+        let fahrenheit = (props.celsius.temperature * 9/5) + 32;
         let minTempFahrenheit = (props.celsiusMinTemp * 9/5) + 32;
         let maxTempFahrenheit = (props.celsiusMaxTemp * 9/5) + 32;
         let feelLikeFahrenheit = (props.celsiusFeelsLike * 9/5) + 32;
-        return (<div>
+        return (
+            <div>
                 <h2>
                     <div className="changeTemp">
                         {Math.round(fahrenheit)}
@@ -44,7 +45,7 @@ export default function WeatherTemperature(props){
                     </div>
                 </h2>
                 <p>Min {Math.round(minTempFahrenheit)}°F / Max {Math.round(maxTempFahrenheit)}°F</p>
-                <p className="paddingBottom20 text-capitalize">Feels like {Math.round(feelLikeFahrenheit)}°C</p>
+                <p className="paddingBottom20 text-capitalize">Feels like {Math.round(feelLikeFahrenheit)}°F</p>
             </div>);
     }
 }

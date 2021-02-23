@@ -11,6 +11,7 @@ import "./weather.css";
 export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ready: false});
   const [city, setCity] = useState(props.defaultCity);
+  const [unit, setUnit] = useState("celsius");
 
   function currentTemperature(response) {
     setWeatherData({
@@ -24,7 +25,7 @@ export default function Weather(props) {
       description: response.data.weather[0].description,
       humidity: response.data.main.humidity,
       wind: response.data.wind.speed,
-      city: response.data.name
+      city: response.data.name,
     });
   }
 
@@ -41,7 +42,6 @@ export default function Weather(props) {
   function searchLocation(event) {
     event.preventDefault();
     function retrieveCoords(position) {
-      console.log(position);
       let latitude = position.coords.latitude;
       let longitude = position.coords.longitude;
       let apiKey = `3e712c360eb3016685312bd97cac9b63`;
@@ -73,16 +73,12 @@ export default function Weather(props) {
         <button className="button" onClick={searchLocation}>Current location</button>
         <Salutation data={weatherData} />
         <FormattedDate date={weatherData.date} />
-        <WeatherInfo data={weatherData} />
-        <WeatherForecast city={weatherData.city} />
+        <WeatherInfo data={weatherData} unit={unit} setUnit={setUnit} />
+        <WeatherForecast city={weatherData.city} unit={unit} />
     </div>
   );
-
-  } else {
+} else {
     search();
     return <p>Loading temperature...</p>; 
   }
-
-
-  
 }
